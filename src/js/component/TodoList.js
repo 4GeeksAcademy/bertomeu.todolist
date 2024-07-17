@@ -18,16 +18,16 @@ const TodoList = () => {
                             setInput("");
                         }
                     }} 
-                    placeholder="What needs to be done?" 
+                    placeholder="What needs to be done?"
                 />
             </div>
             {todos.map((item, index) => (
-                <div key={index} className="border border-white border-5 mt-3 rounded-pill p-3 bg-white fs-3 d-flex justify-content-between align-items-center" >
+                <div key={index} className="task border border-white border-5 mt-3 rounded-pill p-3 bg-white fs-3 d-flex justify-content-between align-items-center" >
                     {item}
-                    <i className="fas fa-trash-alt" onClick={() => setTodos(todos.filter((_, i) => i !== index))}></i>
+                    <i className="fas fa-trash-alt icon" onClick={() => setTodos(todos.filter((_, i) => i !== index))}></i>
                 </div>
             ))}
-            <div className="mt-3 fs-3 text-center" >{todos.length} tasks</div>
+            <div className="mt-3 fs-3 text-center" >{todos.length === 0 ? "No tasks, add tasks" : `${todos.length} tasks`} </div>
         </div>
     );
 }
